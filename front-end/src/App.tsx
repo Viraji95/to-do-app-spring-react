@@ -5,6 +5,7 @@ import {SignIn} from "./signin/SignIn.tsx";
 import {Loader} from "./loader/Loader.tsx";
 import {useEffect, useState} from "react";
 import {auth} from "./firebase.ts";
+import {Header} from "./header/Header.tsx";
 
 function App() {
     const [loader, setLoader] = useState(true);
@@ -33,7 +34,12 @@ function App() {
             <Loader/>
             :
             user ?
-                <App/>
+                (<>
+                    <Header/>
+                    <App/>
+
+                </>)
+
                 :
                 <SignIn/>
         }
