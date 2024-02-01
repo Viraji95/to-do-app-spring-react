@@ -32,7 +32,9 @@ function App() {
         {loader ?
             <Loader/>
             :
-
+            user ?
+                <App/>
+                :
                 <SignIn/>
         }
     </>
